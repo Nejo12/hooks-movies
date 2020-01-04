@@ -1,11 +1,13 @@
 import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <p>Start Test here... </p>
-    </div>
-  );
-}
+import Header from "./components/header/header.component";
+import Home from "./pages/home/home.component";
+
+const App = () => (
+  <div className="App">
+    <Header />
+    <Home />
+  </div>
+);
 
 export default App;
