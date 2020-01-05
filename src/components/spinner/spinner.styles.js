@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const StyledSpinner = styled.div`
   border: 5px solid transparent;
   border-top: 5px solid limegreen;
+  border-right: 5px solid blue;
+  border-bottom: 5px solid yellow;
+  border-left: 5px solid red;
+
   border-radius: 50%;
   height: 50px;
   width: 50px;
