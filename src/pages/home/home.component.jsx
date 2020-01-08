@@ -21,17 +21,23 @@ import { StyledHeaderContent } from "./home.styles";
 const NoImage = require("../../images/no_image.jpg");
 
 const Home = () => {
-  const [{ state, loading, error }, fetchMovies] = useHomeFetch();
+  const [
+    {
+      state: { currentPage, totalPages, movies, homeImage },
+      loading,
+      error
+    },
+    fetchMovies
+  ] = useHomeFetch();
   const [searchTerm, setSearchTerm] = useState("");
 
   const loadMoreMovies = () => {
-    const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${state.currentPage +
+    const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage +
       1}`;
-    const popularEndpoint = `${POPULAR_BASE_URL}&page=${state.currentPage + 1}`;
+    const popularEndpoint = `${POPULAR_BASE_URL}&page=${currentPage + 1}`;
 
     const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
 
-    console.log("Homeendpoint", endpoint);
     fetchMovies(endpoint);
   };
 
@@ -42,15 +48,13 @@ const Home = () => {
     fetchMovies(endpoint);
   };
 
-  console.log(state);
-
   if (error)
     return (
       <div style={{ fontSize: "48px", textAlign: "center" }}>
         Nejo! Something went wrong...
       </div>
     );
-  if (!state.movies[0]) return <Spinner />;
+  if (!movies[0]) return <Spinner />;
 
   return (
     <div>
@@ -59,12 +63,12 @@ const Home = () => {
         <SearchBar callback={searchMovies} />
       </StyledHeaderContent>
       <HomeImage
-        image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.homeImage.backdrop_path}`}
-        title={state.homeImage.title}
-        text={state.homeImage.overview}
+        image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${homeImage.backdrop_path}`}
+        title={homeImage.title}
+        text={homeImage.overview}
       />
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
-        {state.movies.map(movie => (
+        {movies.map(movie => (
           <MovieThumb
             key={movie.id}
             movieId={movie.id}
@@ -79,7 +83,7 @@ const Home = () => {
         ))}
       </Grid>
       {!loading && <Spinner />}
-      {state.currentPage < state.totalPages && (
+      {currentPage < totalPages && (
         <LoadMoreBtn text="Load More" callback={loadMoreMovies} />
       )}
     </div>
