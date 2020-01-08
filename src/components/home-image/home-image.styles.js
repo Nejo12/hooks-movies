@@ -4,8 +4,8 @@ export const StyledHomeImage = styled.div`
   background: ${props =>
     `linear-gradient(
       to bottom, rgba(0,0,0,0)
-      70%, rgba(0,0,0,0.65)
-      100%
+      10%, rgba(0,0,0,0.65)
+      30%
     ),
     url('${props.image}'), #1c1c1c`};
   position: relative;

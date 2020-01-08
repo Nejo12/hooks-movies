@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import HomeImage from "../../components/home-image/home-image.component";
-import Search from "../../search/search.component";
 import Grid from "../../components/grid/grid.component";
 import MovieThumb from "../../components/movie-thumb/movie-thumb.component";
 import Spinner from "../../components/spinner/spinner.component";
@@ -16,7 +15,7 @@ import {
   API_KEY
 } from "../../config";
 
-const NoImage = require("../../images/download.jpeg");
+const NoImage = require("../../images/no_image.jpg");
 
 const Home = () => {
   const [{ state, loading, error }, fetchMovies] = useHomeFetch();
@@ -33,7 +32,7 @@ const Home = () => {
     fetchMovies(endpoint);
   };
 
-  // console.log(state);
+  console.log(state);
 
   if (error)
     return (
@@ -50,7 +49,6 @@ const Home = () => {
         title={state.homeImage.title}
         text={state.homeImage.overview}
       />
-      <Search />
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
         {state.movies.map(movie => (
           <MovieThumb
