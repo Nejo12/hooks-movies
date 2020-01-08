@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.div`
   padding: 0 30px;
+  background: #1c1c1c;
   border-bottom: 1px solid grey;
 
   .header-content {

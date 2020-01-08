@@ -11,19 +11,24 @@ export const useHomeFetch = () => {
     setLoading(true);
     setError(false);
 
+    const isLoadMore = endpoint.search("page");
+
     try {
       const result = await (await fetch(endpoint)).json();
 
       setState(res => ({
         ...res,
-        movies: [...result.results],
+        movies:
+          isLoadMore !== -1
+            ? [...res.movies, ...result.results]
+            : [...result.results],
         homeImage: res.homeImage || result.results[0],
         currentPage: result.page,
         totalPage: result.total_pages
       }));
     } catch (err) {
       setError(true);
-      console.log(err.message);
+      console.log(err);
     }
   };
 
