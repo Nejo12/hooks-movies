@@ -4,8 +4,8 @@ export const StyledHomeImage = styled.div`
   background: ${props =>
     `linear-gradient(
       to bottom, rgba(0,0,0,0)
-      10%, rgba(0,0,0,0.65)
-      30%
+      70%, rgba(0,0,0,0.65)
+      100%
     ),
     url('${props.image}'), #1c1c1c`};
   position: relative;
@@ -19,6 +19,7 @@ export const StyledHomeImage = styled.div`
     max-width: 1280px;
     padding: 20px;
     margin: 0 auto;
+    background: linear-gradient(to bottom, #1c1c1c, transparent 100%);
   }
 
   .home-image-text {
