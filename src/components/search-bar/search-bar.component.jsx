@@ -10,6 +10,7 @@ const SearchIcon = require("../../images/search_icon.svg");
 
 const SearchBar = ({ callback }) => {
   const [state, setState] = useState("");
+
   const timeOut = useRef(null);
 
   const doSearch = event => {

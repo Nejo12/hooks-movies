@@ -16,9 +16,9 @@ export const StyledHomeImage = styled.div`
   animation: animateHomeImage 1s;
 
   .home-image-content {
-    max-width: 1280px;
+    /* max-width: 1280px; */
     padding: 20px;
-    margin: 0 auto;
+    /* margin: 0; */
     background: linear-gradient(to bottom, #1c1c1c, transparent 100%);
   }
 

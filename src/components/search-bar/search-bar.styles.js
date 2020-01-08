@@ -3,24 +3,25 @@ import styled from "styled-components";
 export const StyledSearchBar = styled.div`
   max-width: 300px;
   width: 100%;
-  height: 85px;
+  max-height: 85px;
   padding: 25px 20px 0px 20px;
-  box-sizing: border-box;
-  color: #fff;
+  /* box-sizing: border-box; */
+  /* background: #1c1c1c;
+  color: #fff; */
 `;
 
 export const StyledSearchBarContent = styled.div`
   max-width: 1280px;
   width: 100%;
-  height: 55px;
+  /* height: 55px; */
   margin: 0 auto;
   border: 0;
   position: relative;
-  color: #fff;
+  /* color: #fff; */
 
   :hover {
-    border-bottom: 2px solid #1e1e1e;
-    transition: ease 10s;
+    border-bottom: 2px solid #fff;
+    transition: ease-in-out 10s;
   }
 
   input {
@@ -41,7 +42,7 @@ export const StyledSearchBarContent = styled.div`
     }
 
     @media screen and (max-width: 720px) {
-      font-size: 28px;
+      /* font-size: 28px; */
     }
   }
 `;

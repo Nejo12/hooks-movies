@@ -7,7 +7,7 @@ import Home from "./pages/home/home.component";
 
 const App = () => (
   <div className="App">
-    <Header />
+    {/* <Header /> */}
     <Home />
     <GlobalStyles />
   </div>

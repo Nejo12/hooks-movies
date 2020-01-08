@@ -11,9 +11,12 @@ import {
   IMAGE_BASE_URL,
   BACKDROP_SIZE,
   POSTER_SIZE,
-  API_URL,
-  API_KEY
+  SEARCH_BASE_URL,
+  POPULAR_BASE_URL
 } from "../../config";
+import Header from "../../components/header/header.component";
+import SearchBar from "../../components/search-bar/search-bar.component";
+import { StyledHeaderContent } from "./home.styles";
 
 const NoImage = require("../../images/no_image.jpg");
 
@@ -22,13 +25,20 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const loadMoreMovies = () => {
-    const searchEndpoint = `${API_URL}search/movie?api_key=${API_KEY}&query={searchTerm}&page=${state.currentPage +
+    const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${state.currentPage +
       1}`;
-    const popularEndpoint = `${API_URL}movie/popular?api_key=${API_KEY}&page=${state.currentPage +
-      1}`;
+    const popularEndpoint = `${POPULAR_BASE_URL}&page=${state.currentPage + 1}`;
 
     const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
 
+    console.log("Homeendpoint", endpoint);
+    fetchMovies(endpoint);
+  };
+
+  const searchMovies = search => {
+    const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
+
+    setSearchTerm(search);
     fetchMovies(endpoint);
   };
 
@@ -40,10 +50,14 @@ const Home = () => {
         Nejo! Something went wrong...
       </div>
     );
-  if (!state.movies[0]) return <Spinner />; // loads while state is null,i.e. empty.
+  if (!state.movies[0]) return <Spinner />;
 
   return (
     <div>
+      <StyledHeaderContent className="header-content">
+        <Header />
+        <SearchBar callback={searchMovies} />
+      </StyledHeaderContent>
       <HomeImage
         image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.homeImage.backdrop_path}`}
         title={state.homeImage.title}
@@ -64,7 +78,8 @@ const Home = () => {
           />
         ))}
       </Grid>
-      {state.currentPage < state.totalPage && (
+      {!loading && <Spinner />}
+      {state.currentPage < state.totalPages && (
         <LoadMoreBtn text="Load More" callback={loadMoreMovies} />
       )}
     </div>
