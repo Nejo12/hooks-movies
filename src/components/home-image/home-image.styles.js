@@ -10,7 +10,7 @@ export const StyledHomeImage = styled.div`
     url('${props.image}'), #1c1c1c`};
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 400px;
   background-size: 100%, cover !important;
   background-position: center, center !important;
   animation: animateHomeImage 1s;
