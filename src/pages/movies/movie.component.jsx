@@ -19,12 +19,12 @@ const Movie = ({ movieId }) => {
         Problem displaying the selected movie info. Get Nejo!
       </div>
     );
-  if (loading) return <Spinner />;
+  if (loading || !state.title) return <Spinner />;
 
   return (
     <div>
       <Navigation movie={state.title} />
-      <MovieInfo />
+      <MovieInfo movie={state} />
       <MovieInfoBar />
       <Grid>
         <Actors />
