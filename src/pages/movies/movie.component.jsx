@@ -7,7 +7,12 @@ import Actors from "../../components/actors/actors.component";
 import Grid from "../../components/grid/grid.component";
 import Spinner from "../../components/spinner/spinner.component";
 
+import { useMovieFetch } from "../../hooks/useMovieFetch";
+
 const Movie = ({ movieId }) => {
+  const [state, loading, error] = useMovieFetch(movieId);
+  console.log("stateINMovie: ", state);
+
   return (
     <div>
       <Navigation />
