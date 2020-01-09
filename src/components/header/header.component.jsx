@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 import { StyledHeader, StyledHeaderLogo } from "./header.styles";
 
@@ -6,7 +7,9 @@ const Logo = require("../../images/tmdb_logo.svg");
 
 const Header = () => (
   <StyledHeader className="header-content">
-    <StyledHeaderLogo src={Logo} alt="header-logo" />
+    <Link to="/">
+      <StyledHeaderLogo src={Logo} alt="header-logo" />
+    </Link>
   </StyledHeader>
 );
 
