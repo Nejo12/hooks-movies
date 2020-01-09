@@ -1,8 +1,18 @@
 import React from "react";
-// import { Router } from "@reach/router";
+import { Link } from "@reach/router";
 
-const Navigation = () => {
-  return <div>Navigation ....</div>;
+import { StyledNavigation } from "./navigation.styles";
+
+const Navigation = ({ movie }) => {
+  return (
+    <StyledNavigation>
+      <Link to="/">
+        <p> Home </p>
+      </Link>
+      <p>|</p>
+      <p>{movie}</p>
+    </StyledNavigation>
+  );
 };
 
 export default Navigation;

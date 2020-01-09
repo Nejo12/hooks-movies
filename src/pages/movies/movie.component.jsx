@@ -13,15 +13,22 @@ const Movie = ({ movieId }) => {
   const [state, loading, error] = useMovieFetch(movieId);
   console.log("stateINMovie: ", state);
 
+  if (error)
+    return (
+      <div style={{ fontSize: "36px", textAlign: "center" }}>
+        Problem displaying the selected movie info. Get Nejo!
+      </div>
+    );
+  if (loading) return <Spinner />;
+
   return (
     <div>
-      <Navigation />
+      <Navigation movie={state.title} />
       <MovieInfo />
       <MovieInfoBar />
       <Grid>
         <Actors />
       </Grid>
-      <Spinner />
     </div>
   );
 };
