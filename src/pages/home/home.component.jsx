@@ -31,6 +31,8 @@ const Home = () => {
   ] = useHomeFetch();
   const [searchTerm, setSearchTerm] = useState("");
 
+  console.log(movies);
+
   const loadMoreMovies = () => {
     const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage +
       1}`;
@@ -81,7 +83,7 @@ const Home = () => {
                 ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
                 : NoImage
             }
-            movieName={movie.original_title}
+            movieName={movie.title}
           />
         ))}
       </Grid>

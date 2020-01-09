@@ -11,7 +11,7 @@ export const useHomeFetch = () => {
     setLoading(true);
     setError(false);
 
-    const isLoadMore = endpoint.search("page");
+    const isLoadMore = endpoint.search("page"); // searches for the string 'page' in path. When found, then it'll depicts a loadMore, else returns -1.
 
     try {
       const result = await (await fetch(endpoint)).json();
