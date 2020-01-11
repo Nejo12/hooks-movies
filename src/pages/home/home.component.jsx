@@ -61,7 +61,7 @@ const Home = () => {
   return (
     <div>
       <StyledHeaderContent className="header-content">
-        <Header />
+        <Header style={{ position: "fixed" }} />
         <SearchBar callback={searchMovies} />
       </StyledHeaderContent>
 

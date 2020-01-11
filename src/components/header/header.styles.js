@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  padding: 30px;
+  padding: 20px;
   /* background: #1c1c1c; */
   /* display: flex;
   justify-content: space-between; */

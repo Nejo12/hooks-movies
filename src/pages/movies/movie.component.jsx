@@ -10,8 +10,8 @@ import Spinner from "../../components/spinner/spinner.component";
 import { useMovieFetch } from "../../hooks/useMovieFetch";
 
 const Movie = ({ movieId }) => {
-  const [state, loading, error] = useMovieFetch(movieId);
-  console.log("stateINMovie: ", state);
+  const [movie, loading, error] = useMovieFetch(movieId);
+  console.log("movieINMovie: ", movie);
 
   if (error)
     return (
@@ -19,15 +19,15 @@ const Movie = ({ movieId }) => {
         Problem displaying the selected movie info. Get Nejo!
       </div>
     );
-  if (loading || !state.title) return <Spinner />;
+  if (loading || !movie.title) return <Spinner />;
 
   return (
     <div>
-      <Navigation movie={state.title} />
-      <MovieInfo movie={state} />
+      <Navigation movie={movie.title} />
+      <MovieInfo movie={movie} />
       <MovieInfoBar />
       <Grid>
-        <Actors />
+        <Actors actor={movie.actors} />
       </Grid>
     </div>
   );

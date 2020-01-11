@@ -9,6 +9,8 @@ export const StyledNavigation = styled.div`
   color: #fff;
   margin: 0 auto;
   padding: 0 20px;
+  position: fixed;
+  z-index: 5;
 
   p {
     font-size: 20px;
