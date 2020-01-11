@@ -7,8 +7,10 @@ const GlobalStyles = createGlobalStyle`
 
 body {
     font-family: 'Abel', sans-serif;
+    color:#fff;
     margin: 0;
     padding: 0;
+    background: #1c1c1c;
 }
 `;
 
