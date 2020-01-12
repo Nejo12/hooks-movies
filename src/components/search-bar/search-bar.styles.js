@@ -5,48 +5,54 @@ export const StyledSearchBar = styled.div`
   width: 100%;
   max-height: 85px;
   padding: 25px 20px 0px 20px;
-  /* box-sizing: border-box; */
-  /* background: #1c1c1c;
-  color: #fff; */
 `;
 
 export const StyledSearchBarContent = styled.div`
   max-width: 1280px;
   width: 100%;
-  /* height: 55px; */
+  height: 55px;
   margin: 0 auto;
+  padding-right: 30px;
   border: 0;
   position: relative;
-  /* color: #fff; */
+  /* display: flex; */
+  /* justify-content: flex-end; */
 
-  :hover {
-    border-bottom: 2px solid #fff;
-    transition: ease-in-out 10s;
+  ::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.5s;
+  }
+  :hover::after {
+    width: 100%;
   }
 
   input {
     font-size: 20px;
     position: absolute;
-    left: 0px;
+    left: 40px;
     margin: 8px 0;
-    padding: 0 0 0 40px;
+    padding: 10px 0;
     border: 0;
     width: 95%;
-    background: transparent;
     height: 30px;
+    background: transparent;
     color: #fff;
-    font-family: "Abel", sans-serif;
+
+    :hover::placeholder {
+      color: transparent;
+      transition: 0.5s;
+    }
 
     :focus {
       outline: none;
     }
 
     @media screen and (max-width: 720px) {
-      /* font-size: 28px; */
+      font-size: 16px;
     }
   }
-`;
-
-export const StyledSearchIcon = styled.img`
-  padding: 10px;
 `;

@@ -12,5 +12,6 @@ export const convertMoney = money => {
     currency: "EUR",
     minimumFractionDigits: 0
   });
+
   return formatter.format(money);
 };

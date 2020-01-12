@@ -29,15 +29,14 @@ export const StyledMovieThumb = styled.div`
     }
   }
 
-  h3 {
+  h4 {
     position: absolute;
     bottom: 0px;
     left: 0px;
-
     width: 100%;
     color: #fff;
     /* text-shadow: 2px 1px #000; */
-    background: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, transparent, #1c1c1c 100%);
     padding: 10px;
     margin: 5px 0;
 
@@ -46,13 +45,4 @@ export const StyledMovieThumb = styled.div`
       background: rgba(0, 0, 0, 0);
     }
   }
-
-  /* h3 span {
-    color: white;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;  
-    background: rgb(0, 0, 0); 
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px;
-  } */
 `;

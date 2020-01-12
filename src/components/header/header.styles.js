@@ -1,30 +1,42 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.div`
-  padding: 20px;
-  /* background: #1c1c1c; */
-  /* display: flex;
-  justify-content: space-between; */
+  width: 30%;
+  padding-left: 20px;
+  background-color: #316dc2; /* For browsers that do not support gradients */
+  background: radial-gradient(
+    ellipse farthest-corner at 0 140%,
+    #3c84cc 0%,
+    #316dc2 70%,
+    #4e95d3 70%
+  );
 
-  /* .header-content { */
-  /* max-width: 1280px; */
-  /* min-height: 80px; */
-  /* padding: 20px 0px; */
-  /* margin: 0 auto; */
-
-  @media screen and (max-width: 500px) {
-    /* width: 1280px; */
-    /* min-height: 0px; */
+  .header-text {
+    font-family: "Permanent Marker", cursive;
+    text-decoration: none;
+    color: yellow;
+    float: right;
+    width: 75%;
+    font-size: 3vw;
+    margin-top: 30px;
+    overflow: hidden;
+    white-space: nowrap;
   }
-  /* } */
-`;
 
-export const StyledHeaderLogo = styled.img`
-  max-width: 150px;
-  width: 80%;
-  margin: 10px 0;
+  img {
+    max-width: 40%;
+    width: 20%;
+    margin: 10px 10px 15px 0;
+  }
+  @media screen and (max-width: 735px) {
+    .header-text {
+      width: 100%;
+      font-size: 4vw;
+    }
 
-  @media screen and (max-width: 620px) {
-    /* width: 15%; */
+    img {
+      float: right;
+      margin-top: -75px;
+    }
   }
 `;

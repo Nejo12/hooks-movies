@@ -1,10 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faClock,
-  faMoneyBillWave,
-  faHandHoldingUsd
-} from "@fortawesome/free-solid-svg-icons";
+import { faClock, faMoneyBillAlt } from "@fortawesome/free-regular-svg-icons";
+import { faHandHoldingUsd } from "@fortawesome/free-solid-svg-icons";
 
 import { calcTime, convertMoney } from "../../helpers";
 
@@ -21,7 +18,7 @@ const MovieInfoBar = ({ time, budget, revenue }) => (
       </div>
 
       <div className="movieinfobar-content-col">
-        <FontAwesomeIcon className="fa-icon" icon={faMoneyBillWave} />
+        <FontAwesomeIcon className="fa-icon" icon={faMoneyBillAlt} />
         <span className="movieinfobar-info">
           Budget: {convertMoney(budget)}
         </span>

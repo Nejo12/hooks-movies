@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../config";
 
 export const StyledMovieInfo = styled.div`
@@ -10,35 +11,47 @@ export const StyledMovieInfo = styled.div`
   background-position: center !important;
   width: 100%;
   padding: 40px 20px;
-  box-sizing: border-box;
   animation: animateMovieinfo 1s;
 
+  @media screen and (max-width: 720px) {
+    background: none;
+  }
+
+  h4 {
+    /* props from movieThumb */
+    display: none;
+  }
+
+  img {
+    border-radius: 20px 0 0 0;
+  }
+
   .movieinfo-content {
+    position: relative;
     max-width: 1280px;
     min-height: 450px;
-    margin: 0 auto;
-    background: rgb(0, 0, 0, 0.7);
-    border-radius: 20px;
-    position: relative;
+    margin: 30px auto;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px 20px 0 0;
+    border-bottom: 3px solid #fff;
+
+    @media screen and (max-width: 640px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .movieinfo-thumb {
     width: 300px;
     float: left;
-
-    @media screen and (max-width: 768px) {
-      width: 100% !important;
-    }
   }
 
   .movieinfo-text {
-    font-family: Arial, Helvetica, sans-serif;
     padding: 40px;
-    color: #fff;
     overflow: hidden;
+    border-left: 2px solid #fff;
 
     h1 {
-      font-family: "Abel", sans-serif;
       font-size: 48px;
       margin: 0;
 
@@ -54,7 +67,6 @@ export const StyledMovieInfo = styled.div`
     }
 
     p {
-      font-family: "Abel", sans-serif;
       font-size: 18px;
       line-height: 26px;
     }
@@ -75,11 +87,10 @@ export const StyledMovieInfo = styled.div`
     color: #000;
     font-weight: 800;
     border-radius: 25px;
-    margin: 0px 0 0 0;
   }
 
   .director {
-    margin: 0 0 0 40px;
+    margin-left: 40px;
 
     p {
       margin: 0;

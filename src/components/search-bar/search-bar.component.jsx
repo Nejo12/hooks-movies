@@ -1,12 +1,11 @@
 import React, { useState, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import {
   StyledSearchBar,
-  StyledSearchBarContent,
-  StyledSearchIcon
+  StyledSearchBarContent
 } from "../search-bar/search-bar.styles";
-
-const SearchIcon = require("../../images/search_icon.svg");
 
 const SearchBar = ({ callback }) => {
   const [state, setState] = useState("");
@@ -21,24 +20,19 @@ const SearchBar = ({ callback }) => {
 
     timeOut.current = setTimeout(() => {
       callback(value);
-    }, 500);
+    }, 1000);
   };
 
   return (
     <StyledSearchBar>
       <StyledSearchBarContent>
-        <StyledSearchIcon
-          src={SearchIcon}
-          alt="search-icon"
-          style={{ width: "45px" }} // with Style.component can also be applied within component.
-        />
-
         <input
           type="text"
-          placeholder="Search Movie"
+          placeholder="Search Movies . . ."
           onChange={doSearch}
           value={state}
         />
+        <FontAwesomeIcon icon={faSearch} size="2x" />
       </StyledSearchBarContent>
     </StyledSearchBar>
   );

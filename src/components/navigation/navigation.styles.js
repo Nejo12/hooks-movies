@@ -18,6 +18,7 @@ export const StyledNavigation = styled.div`
     color: #fff;
     padding-right: 10px;
     text-decoration: none;
+    padding-left: 10px;
 
     @media screen and (max-width: 768px) {
       font-size: 16px;

@@ -7,10 +7,7 @@ export const StyledMovieInfoBar = styled.div`
   min-height: 100px;
   height: auto;
   padding: 20px;
-  box-sizing: border-box;
-  font-family: "Abel", sans-serif;
   font-size: 20px;
-  color: #fff;
 
   .movieinfobar-content {
     width: 100%;
@@ -26,7 +23,6 @@ export const StyledMovieInfoBar = styled.div`
 
   .movieinfobar-info {
     padding: 5px 0 0 10px;
-    /* float: left; */
   }
 
   @media screen and (max-width: 760px) {

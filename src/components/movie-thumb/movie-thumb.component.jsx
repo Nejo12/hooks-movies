@@ -12,9 +12,9 @@ const MovieThumb = ({ movieId, image, movieName, clickable }) => (
     ) : (
       <img src={image} alt="moviethumb" />
     )}
-    <h3>
+    <h4>
       <span>{movieName}</span>
-    </h3>
+    </h4>
   </StyledMovieThumb>
 );
 
