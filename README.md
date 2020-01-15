@@ -14,7 +14,7 @@ React hooks Movie App based on The Movie DB API.
 
 **Minimium external libraby usage**
 
-- Minimizing external librabries, e.g.`spinner` as much as possible.
+- Minimizing external librabries, e.g.`spinner`, `carousel` as much as possible.
 
 ## **_Future features_**
 
