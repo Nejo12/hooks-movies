@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import Header from "../../components/header/header.component";
+import SearchBar from "../../components/search-bar/search-bar.component";
 import HomeImage from "../../components/home-image/home-image.component";
 import Grid from "../../components/grid/grid.component";
 import MovieThumb from "../../components/movie-thumb/movie-thumb.component";
@@ -14,9 +16,11 @@ import {
   SEARCH_BASE_URL,
   POPULAR_BASE_URL
 } from "../../config";
-import Header from "../../components/header/header.component";
-import SearchBar from "../../components/search-bar/search-bar.component";
 import { StyledHeaderContent } from "./home.styles";
+import { Link } from "@reach/router";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTheaterMasks } from "@fortawesome/free-solid-svg-icons";
 
 const NoImage = require("../../images/no_image.jpg");
 
@@ -31,7 +35,7 @@ const Home = () => {
   ] = useHomeFetch();
   const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(movies);
+  // console.log(movies);
 
   const loadMoreMovies = () => {
     const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage +
@@ -62,6 +66,20 @@ const Home = () => {
     <div>
       <StyledHeaderContent className="header-content">
         <Header />
+        <div className="header-icons">
+          <Link to="upcoming">
+            <FontAwesomeIcon icon={faTheaterMasks} color="#fff" size="2x" />
+            {""}
+            <br />
+            <span
+              style={{
+                color: "#fff"
+              }}
+            >
+              Upcoming
+            </span>
+          </Link>
+        </div>
         <SearchBar callback={searchMovies} />
       </StyledHeaderContent>
 

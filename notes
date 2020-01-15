@@ -1,16 +1,17 @@
-* title on moviethumbs. try linear-gradient!
-* reduce header height.
-* fixed the Header...?
-* thumb bg in grey- White seems too bright on most sceeens.
-* nice backgroung with white line on home-image-text.
-* margin on sides of home image, also with grey bg.
+- * title on moviethumbs. try linear-gradient!   
+- * reduce header height. 
+- * fixed the Header...?
+- * thumb bg in grey- White seems too bright on most sceeens.
+- * nice background with white line on home-image-text.
+? * margin on sides of home image, also with grey bg.
 *
+* home images displayed in carousel.
 
 * cinema movies ?
 * Top IMDb ?
 * modal on hover
 
-* home images displayed in carousel.
+
 * genre ?
 * Country ?
 * TV series ?

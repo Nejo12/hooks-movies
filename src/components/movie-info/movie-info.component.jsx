@@ -39,6 +39,18 @@ const MovieInfo = ({ movie }) => (
               <p key={element.credit_id}>{element.name}</p>
             ))}
           </div>
+
+          <div className="genre">
+            <h3>GENRE{movie.genres.length > 1 ? "S" : ""}</h3>
+            {movie.genres.map(element => (
+              <p key={element.id}>{element.name}</p>
+            ))}
+          </div>
+
+          <div className="release-date">
+            <h3>RELEASE DATE</h3>
+            <div style={{ color: "yellow" }}>{movie.release_date}</div>
+          </div>
         </div>
       </div>
     </div>

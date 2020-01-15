@@ -3,7 +3,7 @@ import { Link } from "@reach/router";
 
 import { StyledMovieThumb } from "./movie-thumb.styles";
 
-const MovieThumb = ({ movieId, image, movieName, clickable }) => (
+const MovieThumb = ({ movieId, image, movieName, clickable, releaseDate }) => (
   <StyledMovieThumb>
     {clickable ? (
       <Link to={`${movieId}`}>
@@ -12,8 +12,15 @@ const MovieThumb = ({ movieId, image, movieName, clickable }) => (
     ) : (
       <img src={image} alt="moviethumb" />
     )}
+
     <h4>
-      <span>{movieName}</span>
+      {releaseDate ? (
+        <span style={{ color: "orange", textAlign: "center", marginBottom: 0 }}>
+          {releaseDate}
+        </span>
+      ) : (
+        <span>{movieName}</span>
+      )}
     </h4>
   </StyledMovieThumb>
 );

@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
-export const StyledSearchBar = styled.div`
+export const StyledSearchBarContainer = styled.div`
   max-width: 300px;
   width: 100%;
-  max-height: 85px;
-  padding: 25px 20px 0px 20px;
+  max-height: 80px;
+  /* padding: 25px 20px; */
+  margin: 10px 5px;
 `;
 
 export const StyledSearchBarContent = styled.div`
-  max-width: 1280px;
+  max-width: 250px;
   width: 100%;
   height: 55px;
-  margin: 0 auto;
-  padding-right: 30px;
-  border: 0;
+  margin: 10px auto;
   position: relative;
   /* display: flex; */
   /* justify-content: flex-end; */
@@ -24,7 +23,7 @@ export const StyledSearchBarContent = styled.div`
     width: 0;
     height: 2px;
     background: #fff;
-    transition: width 0.5s;
+    transition: width 1s;
   }
   :hover::after {
     width: 100%;
@@ -34,15 +33,14 @@ export const StyledSearchBarContent = styled.div`
     font-size: 20px;
     position: absolute;
     left: 40px;
-    margin: 8px 0;
+    margin-bottom: 5px;
     padding: 10px 0;
     border: 0;
-    width: 95%;
-    height: 30px;
+    height: 35px;
     background: transparent;
     color: #fff;
 
-    :hover::placeholder {
+    :focus::placeholder {
       color: transparent;
       transition: 0.5s;
     }

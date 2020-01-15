@@ -11,7 +11,7 @@ import { useMovieFetch } from "../../hooks/useMovieFetch";
 
 const Movie = ({ movieId }) => {
   const [movie, loading, error] = useMovieFetch(movieId);
-  console.log("movieINMovie: ", movie);
+  // console.log("inMovie: ", movie);
 
   if (error)
     return (

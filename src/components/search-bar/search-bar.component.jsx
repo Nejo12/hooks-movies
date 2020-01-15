@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import {
-  StyledSearchBar,
+  StyledSearchBarContainer,
   StyledSearchBarContent
 } from "../search-bar/search-bar.styles";
 
@@ -24,7 +24,7 @@ const SearchBar = ({ callback }) => {
   };
 
   return (
-    <StyledSearchBar>
+    <StyledSearchBarContainer>
       <StyledSearchBarContent>
         <input
           type="text"
@@ -34,7 +34,7 @@ const SearchBar = ({ callback }) => {
         />
         <FontAwesomeIcon icon={faSearch} size="2x" />
       </StyledSearchBarContent>
-    </StyledSearchBar>
+    </StyledSearchBarContainer>
   );
 };
 

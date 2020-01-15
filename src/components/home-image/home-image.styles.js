@@ -10,7 +10,7 @@ export const StyledHomeImage = styled.div`
     url('${props.image}'), #1c1c1c`};
   position: relative;
   width: 100%;
-  height: 750px;
+  height: 600px;
   background-size: 100%, cover !important;
   background-position: center, center !important;
   animation: animateHomeImage 1s;
@@ -23,7 +23,7 @@ export const StyledHomeImage = styled.div`
   .home-image-text {
     background: linear-gradient(to bottom, transparent, #1c1c1c 100%);
     position: absolute;
-    max-width: 700px;
+    max-width: 900px;
     color: #fff;
     bottom: 40px;
     margin: 20px;
@@ -32,20 +32,22 @@ export const StyledHomeImage = styled.div`
     border-left: 2px solid #fff;
 
     h1 {
-      font-size: 4rem;
+      font-size: 2rem;
+      font-family: "Nunito", sans-serif;
 
       @media screen and (max-width: 720px) {
-        font-size: 3rem;
+        font-size: 1rem;
       }
     }
 
     p {
-      font-size: 1.5rem;
-      line-height: 1.5rem;
+      font-size: 1rem;
+      font-family: "Nunito", sans-serif;
+      line-height: 1.3rem;
 
       @media screen and (max-width: 720px) {
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 0.7rem;
+        line-height: 0.8rem;
       }
     }
 

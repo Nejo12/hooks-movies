@@ -89,7 +89,9 @@ export const StyledMovieInfo = styled.div`
     border-radius: 25px;
   }
 
-  .director {
+  .director,
+  .genre,
+  .release-date {
     margin-left: 40px;
 
     p {
