@@ -15,7 +15,6 @@ export const useUpcomingFetch = () => {
 
     try {
       const result = await (await fetch(endpoint)).json();
-      console.log("Upcoming result: ", result);
 
       setState(res => ({
         ...res,
