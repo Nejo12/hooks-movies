@@ -102,6 +102,10 @@ export const StyledMovieInfo = styled.div`
   @media screen and (max-width: 768px) {
     min-height: 600px;
     height: auto;
+
+    .release-date {
+      display: none;
+    }
   }
 
   @keyframes animateMovieinfo {

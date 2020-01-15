@@ -39,12 +39,17 @@ export const StyledHeader = styled.div`
     }
 
     @media screen and (max-width: 750px) {
+      padding: 0;
       .header-text {
         font-size: 4vw;
       }
+      .FontAwesomeIcon {
+        margin-top: 20px;
+        margin-left: -25px;
+      }
 
       img {
-        width: 25%;
+        display: none;
       }
     }
   }

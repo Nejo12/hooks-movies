@@ -13,7 +13,12 @@ const Header = () => (
     <div className="header-content">
       <Link to="/">
         {/* <h2 className="header-text">Raw Movies</h2> */}
-        <FontAwesomeIcon icon={faHome} color="#fff" size="2x" />
+        <FontAwesomeIcon
+          className="FontAwesomeIcon"
+          icon={faHome}
+          color="#fff"
+          size="2x"
+        />
         <img src={Logo} alt="header-logo" />
       </Link>
     </div>
