@@ -4,6 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 React hooks Movie App based on The Movie DB API.
 
+## `Demo`
+
+[Deployed on netlify](https://hooksmovies.netlify.com/)
+
 ### `Dependencies includes`
 
 - [Styled-Components](https://styled-components.com/)
