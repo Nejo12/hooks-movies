@@ -1,15 +1,19 @@
 import React from "react";
 
-import { StyledHomeImage } from "./home-image.styles";
+import {
+  StyledHomeImage,
+  StyledHomeImageContent,
+  StyledHomeImageText
+} from "./home-image.styles";
 
 const HomeImage = ({ image, title, text }) => (
   <StyledHomeImage image={image}>
-    <div className="home-image-content">
-      <div className="home-image-text">
+    <StyledHomeImageContent>
+      <StyledHomeImageText>
         <h1>{title}</h1>
         <p>{text}</p>
-      </div>
-    </div>
+      </StyledHomeImageText>
+    </StyledHomeImageContent>
   </StyledHomeImage>
 );
 

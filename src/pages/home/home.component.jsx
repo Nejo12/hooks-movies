@@ -17,6 +17,7 @@ import {
   POPULAR_BASE_URL
 } from "../../config";
 import { StyledHeaderContent } from "./home.styles";
+
 import { Link } from "@reach/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,7 +28,13 @@ const NoImage = require("../../images/no_image.jpg");
 const Home = () => {
   const [
     {
-      state: { currentPage, totalPages, movies, homeImage },
+      state: {
+        currentPage,
+        totalPages,
+        movies,
+        homeImage
+        // carouselImages
+      },
       loading,
       error
     },
@@ -35,6 +42,7 @@ const Home = () => {
   ] = useHomeFetch();
   const [searchTerm, setSearchTerm] = useState("");
 
+  console.log(movies);
   const loadMoreMovies = () => {
     const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage +
       1}`;
@@ -80,14 +88,15 @@ const Home = () => {
         </div>
         <SearchBar callback={searchMovies} />
       </StyledHeaderContent>
-
       {!searchTerm && (
         <HomeImage
           image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${homeImage.backdrop_path}`}
+          // image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${carouselImages[1]}`}
           title={homeImage.title}
           text={homeImage.overview}
         />
       )}
+
       <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
         {movies.map(movie => (
           <MovieThumb

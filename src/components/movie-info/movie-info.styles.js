@@ -11,6 +11,7 @@ export const StyledMovieInfo = styled.div`
   background-position: center !important;
   width: 100%;
   padding: 40px 20px;
+
   animation: animateMovieinfo 1s;
 
   @media screen and (max-width: 720px) {
@@ -24,6 +25,7 @@ export const StyledMovieInfo = styled.div`
 
   img {
     border-radius: 20px 0 0 0;
+    border-right: 2px solid #fff;
   }
 
   .movieinfo-content {
@@ -49,7 +51,7 @@ export const StyledMovieInfo = styled.div`
   .movieinfo-text {
     padding: 40px;
     overflow: hidden;
-    border-left: 2px solid #fff;
+    /* border-left: 2px solid #fff; */
 
     h1 {
       font-size: 48px;

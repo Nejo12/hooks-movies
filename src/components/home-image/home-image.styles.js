@@ -14,46 +14,45 @@ export const StyledHomeImage = styled.div`
   background-size: 100%, cover !important;
   background-position: center, center !important;
   animation: animateHomeImage 1s;
+`;
 
-  .home-image-content {
-    padding: 20px;
-    background: pink;
-  }
+export const StyledHomeImageContent = styled.div`
+  background: linear-gradient(to bottom, transparent, #1c1c1c 100%);
+  position: absolute;
+  max-width: 900px;
+  min-height: 50px;
+  color: #fff;
+  padding: 20px;
+  bottom: 40px;
+  border-left: 2px solid #fff;
+  margin: 20px auto 20px 40px;
+`;
 
-  .home-image-text {
-    background: linear-gradient(to bottom, transparent, #1c1c1c 100%);
-    position: absolute;
-    max-width: 900px;
-    color: #fff;
-    bottom: 40px;
-    margin: 20px;
-    min-height: 100px;
-    padding: 0 30px 0 10px;
-    border-left: 2px solid #fff;
+export const StyledHomeImageText = styled.div`
+  padding: 0 10px;
 
-    h1 {
-      font-size: 2rem;
-      font-family: "Nunito", sans-serif;
-
-      @media screen and (max-width: 720px) {
-        font-size: 1rem;
-      }
-    }
-
-    p {
-      font-size: 1rem;
-      font-family: "Nunito", sans-serif;
-      line-height: 1.3rem;
-
-      @media screen and (max-width: 720px) {
-        font-size: 0.7rem;
-        line-height: 0.8rem;
-      }
-    }
+  h1 {
+    font-size: 2rem;
+    font-family: "Nunito", sans-serif;
 
     @media screen and (max-width: 720px) {
-      max-width: 100%;
+      font-size: 1rem;
     }
+  }
+
+  p {
+    font-size: 1rem;
+    font-family: "Nunito", sans-serif;
+    line-height: 1.3rem;
+
+    @media screen and (max-width: 720px) {
+      font-size: 0.7rem;
+      line-height: 0.8rem;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    max-width: 100%;
   }
 
   @keyframes animateHomeImage {

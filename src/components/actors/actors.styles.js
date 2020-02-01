@@ -12,16 +12,16 @@ export const StyledActor = styled.div`
     object-fit: cover;
     border-radius: 15px;
   }
+`;
 
-  .actor-name {
-    display: block;
-    font-size: 18px;
-    margin: 10px 0 0 0;
-  }
+export const StyledActorName = styled.div`
+  display: block;
+  font-size: 18px;
+  margin: 10px 0 0 0;
+`;
 
-  .actor-character {
-    display: block;
-    font-size: 16px;
-    margin: 0 0 10px 0;
-  }
+export const StyledActorCharacter = styled.div`
+  display: block;
+  font-size: 16px;
+  margin: 0 0 10px 0;
 `;

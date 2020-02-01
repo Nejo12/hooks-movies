@@ -4,13 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 // import { faArrowAltCircleLeft } from "@fortawesome/free-regular-svg-icons";
 
-import { StyledHeader } from "./header.styles";
+import { StyledHeader, StyledHeaderContent } from "./header.styles";
 
 const Logo = require("../../images/tmdb_logo.svg");
 
 const Header = () => (
   <StyledHeader>
-    <div className="header-content">
+    <StyledHeaderContent>
       <Link to="/">
         {/* <h2 className="header-text">Raw Movies</h2> */}
         <FontAwesomeIcon
@@ -21,7 +21,7 @@ const Header = () => (
         />
         <img src={Logo} alt="header-logo" />
       </Link>
-    </div>
+    </StyledHeaderContent>
   </StyledHeader>
 );
 

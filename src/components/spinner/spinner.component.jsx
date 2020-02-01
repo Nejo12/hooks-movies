@@ -6,7 +6,7 @@ const Spinner = () => (
   <div>
     <StyledSpinner />
 
-    <p style={{ textAlign: "center" }}>Reload the page to Search again. </p>
+    <p style={{ textAlign: "center" }}>Loading . . . </p>
   </div>
 );
 

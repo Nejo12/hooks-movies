@@ -15,6 +15,10 @@ export const useHomeFetch = () => {
 
     try {
       const result = await (await fetch(endpoint)).json();
+      console.log(result);
+      // const selectedMovies = result.results.slice(0, 5);
+      // const carouselImages = selectedMovies.map(el => el.backdrop_path);
+      // console.log("carouselImages:", carouselImages);
 
       setState(res => ({
         ...res,
@@ -22,6 +26,7 @@ export const useHomeFetch = () => {
           isLoadMore !== -1
             ? [...res.movies, ...result.results]
             : [...result.results],
+        // carouselImages: result.results.slice(0, 5).map(el => el.backdrop_path),
         homeImage: res.homeImage || result.results[0],
         currentPage: result.page,
         totalPages: result.total_pages
@@ -34,6 +39,7 @@ export const useHomeFetch = () => {
 
   useEffect(() => {
     fetchMovies(POPULAR_BASE_URL);
+    console.log(state);
   }, []);
 
   return [{ state, loading, error }, fetchMovies];
