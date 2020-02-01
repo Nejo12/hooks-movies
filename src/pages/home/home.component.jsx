@@ -42,7 +42,6 @@ const Home = () => {
   ] = useHomeFetch();
   const [searchTerm, setSearchTerm] = useState("");
 
-  console.log(movies);
   const loadMoreMovies = () => {
     const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage +
       1}`;

@@ -15,7 +15,7 @@ export const useHomeFetch = () => {
 
     try {
       const result = await (await fetch(endpoint)).json();
-      console.log(result);
+
       // const selectedMovies = result.results.slice(0, 5);
       // const carouselImages = selectedMovies.map(el => el.backdrop_path);
       // console.log("carouselImages:", carouselImages);
@@ -39,7 +39,6 @@ export const useHomeFetch = () => {
 
   useEffect(() => {
     fetchMovies(POPULAR_BASE_URL);
-    console.log(state);
   }, []);
 
   return [{ state, loading, error }, fetchMovies];
