@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "@reach/router";
 
 import Header from "../../components/header/header.component";
 import SearchBar from "../../components/search-bar/search-bar.component";
@@ -16,12 +17,10 @@ import {
   SEARCH_BASE_URL,
   POPULAR_BASE_URL
 } from "../../config";
-import { StyledHeaderContent } from "./home.styles";
-
-import { Link } from "@reach/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTheaterMasks } from "@fortawesome/free-solid-svg-icons";
+import { StyledHeaderContent } from "./home.styles";
 
 const NoImage = require("../../images/no_image.jpg");
 
@@ -33,89 +32,82 @@ const Home = () => {
         totalPages,
         movies,
         homeImage
-        // carouselImages
       },
       loading,
       error
     },
     fetchMovies
   ] = useHomeFetch();
-  const [searchTerm, setSearchTerm] = useState("");
+  const [ searchTerm, setSearchTerm ] = useState("");
 
   const loadMoreMovies = () => {
-    const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage +
-      1}`;
+    const searchEndpoint = `${SEARCH_BASE_URL}${searchTerm}&page=${currentPage + 1}`;
     const popularEndpoint = `${POPULAR_BASE_URL}&page=${currentPage + 1}`;
-
     const endpoint = searchTerm ? searchEndpoint : popularEndpoint;
-
     fetchMovies(endpoint);
   };
 
   const searchMovies = search => {
     const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
-
     setSearchTerm(search);
     fetchMovies(endpoint);
   };
 
   if (error)
     return (
-      <div style={{ fontSize: "48px", textAlign: "center" }}>
-        Nejo! Something went wrong...
+      <div style={ { fontSize: "48px", textAlign: "center" } }>
+        Something went wrong...
       </div>
     );
-  if (!movies[0]) return <Spinner />;
+  if (!movies[ 0 ]) return <Spinner />;
 
   return (
-    <div>
+    <>
       <StyledHeaderContent className="header-content">
         <Header />
         <div className="header-icons">
           <Link to="upcoming">
-            <FontAwesomeIcon icon={faTheaterMasks} color="#fff" size="2x" />
-            {""}
+            <FontAwesomeIcon icon={ faTheaterMasks } color="#fff" size="2x" />
+            { "" }
             <br />
             <span
-              style={{
+              style={ {
                 color: "#fff"
-              }}
+              } }
             >
               Upcoming
             </span>
           </Link>
         </div>
-        <SearchBar callback={searchMovies} />
+        <SearchBar callback={ searchMovies } />
       </StyledHeaderContent>
-      {!searchTerm && (
+      { !searchTerm && (
         <HomeImage
-          image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${homeImage.backdrop_path}`}
-          // image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${carouselImages[1]}`}
-          title={homeImage.title}
-          text={homeImage.overview}
+          image={ `${IMAGE_BASE_URL}${BACKDROP_SIZE}${homeImage.backdrop_path}` }
+          title={ homeImage.title }
+          text={ homeImage.overview }
         />
-      )}
-
-      <Grid header={searchTerm ? "Search Result" : "Popular Movies"}>
-        {movies.map(movie => (
+      ) }
+      <Grid header={ searchTerm ? "Search Result" : "Popular Movies" }>
+        { movies.map(({ id, poster_path, title }) => (
           <MovieThumb
-            key={movie.id}
-            movieId={movie.id}
+            key={ id }
+            movieId={ id }
             clickable
             image={
-              movie.poster_path
-                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+              poster_path
+                ? `${IMAGE_BASE_URL}${POSTER_SIZE}${poster_path}`
                 : NoImage
             }
-            movieName={movie.title}
+            movieName={ title }
           />
-        ))}
+        )) }
       </Grid>
-      {!loading && <Spinner />}
-      {currentPage < totalPages && (
-        <LoadMoreBtn text="Load More" callback={loadMoreMovies} />
-      )}
-    </div>
+      { !loading && <Spinner /> }
+      { currentPage < totalPages && (
+        <LoadMoreBtn text="Load More" callback={ loadMoreMovies } />
+      ) }
+    </>
   );
 };
 
