@@ -10,7 +10,7 @@ export const StyledSpinner = styled.div`
   border-radius: 50%;
   height: 50px;
   width: 50px;
-  margin: 20px auto;
+  margin: 20% auto;
   animation: spin 1s linear infinite;
 
   @keyframes spin {

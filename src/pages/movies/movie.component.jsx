@@ -10,32 +10,30 @@ import Spinner from "../../components/spinner/spinner.component";
 import { useMovieFetch } from "../../hooks/useMovieFetch";
 
 const Movie = ({ movieId }) => {
-  const [movie, loading, error] = useMovieFetch(movieId);
-  // console.log("inMovie: ", movie);
-
+  const [ movie, loading, error ] = useMovieFetch(movieId);
   if (error)
     return (
-      <div style={{ fontSize: "36px", textAlign: "center" }}>
+      <div style={ { fontSize: "36px", textAlign: "center" } }>
         Problem displaying the selected movie info. Get Nejo!
       </div>
     );
   if (loading || !movie.title) return <Spinner />;
 
   return (
-    <div>
-      <Navigation movie={movie.title} />
-      <MovieInfo movie={movie} />
+    <>
+      <Navigation movie={ movie.title } />
+      <MovieInfo movie={ movie } />
       <MovieInfoBar
-        time={movie.runtime}
-        budget={movie.budget}
-        revenue={movie.revenue}
+        time={ movie.runtime }
+        budget={ movie.budget }
+        revenue={ movie.revenue }
       />
-      <Grid header="Actorss">
-        {movie.actors.map(actor => (
-          <Actors key={actor.credit_id} actor={actor} />
-        ))}
+      <Grid header="Actors">
+        { movie.actors.map(actor => (
+          <Actors key={ actor.credit_id } actor={ actor } />
+        )) }
       </Grid>
-    </div>
+    </>
   );
 };
 

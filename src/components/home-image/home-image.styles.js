@@ -4,20 +4,21 @@ export const StyledHomeImage = styled.div`
   background: ${props =>
     `linear-gradient(
       to bottom, rgba(0,0,0,0)
-      70%, rgba(0,0,0,0.65)
+      0%, rgba(0,0,0,0.5)
       100%
     ),
-    url('${props.image}'), #1c1c1c`};
+    url('${props.image}'), #17202a`};
   position: relative;
   width: 100%;
   height: 600px;
+  margin-top: 70px;
   background-size: 100%, cover !important;
   background-position: center, center !important;
   animation: animateHomeImage 1s;
 `;
 
 export const StyledHomeImageContent = styled.div`
-  background: linear-gradient(to bottom, transparent, #1c1c1c 100%);
+  background: linear-gradient(to bottom, transparent 60%, #17202a 100%);
   position: absolute;
   max-width: 900px;
   min-height: 50px;

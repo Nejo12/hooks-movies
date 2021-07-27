@@ -11,7 +11,7 @@ body {
     color:#fff;
     margin: 0;
     padding: 0;
-    background: #1c1c1c;
+    background: #17202a;
 }
 `;
 
